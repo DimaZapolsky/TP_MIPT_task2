@@ -6,6 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 set(SOURCES_LIST C/main.cpp)
 
+set(CMAKE_INSTALL_PREFIX "/bin")
+
 include(FindPythonInterp)
 execute_process(
         COMMAND ${PYTHON_EXECUTABLE} preparing.py
@@ -21,5 +23,3 @@ add_executable(TP_homework ${SOURCES_LIST})
 add_subdirectory(B)
 
 target_link_libraries(TP_homework lib)
-
-install(TARGETS TP_homework DESTINATION /bin)
